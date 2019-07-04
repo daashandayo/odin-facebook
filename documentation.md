@@ -4,7 +4,7 @@
 
 ## Entity Relationship Diagram
 
-![ERD](https://raw.githubusercontent.com/daashandayo/odin-rails-final-project/dev/odin-rails-final-project%20.jpg)
+![ERD](https://raw.githubusercontent.com/daashandayo/odin-facebook/master/odin-rails-final-project%20.jpg)
 
 
 
