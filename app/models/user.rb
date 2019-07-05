@@ -23,8 +23,8 @@ class User < ApplicationRecord
 
 
   def add_friend(friend_id)
-    Friendship.create(user_id: self.id, friend_id: friend_id)
-    Friendship.create(user_id: friend_id, friend_id: self.id)
+    Friendship.create(user_id: self.id, friend_id: friend_id, status: "requested")
+    Friendship.create(user_id: friend_id, friend_id: self.id, status: "pending")
   end
   
 end
