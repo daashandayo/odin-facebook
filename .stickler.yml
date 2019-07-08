@@ -7,4 +7,4 @@ files:
     - 'bower_components/*'
     - 'node_modules/*'
 fixers:
-  enable: true
+  enable: false
