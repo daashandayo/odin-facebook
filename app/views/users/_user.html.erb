@@ -1,0 +1,10 @@
+<% if user != current_user && !current_user.friendships.include?(user) %>
+  <li>
+    <%= user.name %>
+    <%# <span>-- "Add Friend" button here </span> %>
+    <%= form_tag friendships_create_path do %>
+      <%= hidden_field_tag :friend_id, user.id %>
+      <%= submit_tag "Add friend"%>
+    <% end %>
+  </li>
+<%end%>

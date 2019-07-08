@@ -1,4 +1,13 @@
 <% provide(:title, "Profile page") %>
 
 <h1>Profile page</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+
+<h2>Profile</h2>
+<div class="profile">
+  <%= @user.name %>
+</div>
+
+<h2>Posts</h2>
+<div class="posts">
+  <%= render @posts %>
+</div>
