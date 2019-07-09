@@ -12,4 +12,5 @@ Rails.application.routes.draw do
 
   post '/posts', to:     "posts#create", as: "post_create"
   post '/likes', to:     "likes#create", as: "like_create"
+  post '/comments', to: "comments#create", as: "comment_create"
 end
