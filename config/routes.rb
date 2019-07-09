@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   put '/friendships', to: "friendships#update", as: "friendships_update"
 
   post '/posts', to:     "posts#create", as: "post_create"
-
+  post '/likes', to:     "likes#create", as: "like_create"
 end
