@@ -1,0 +1,7 @@
+<li>
+  <%= User.find(friendship.friend_id).name %>
+  <%= form_tag friendships_update_path, method: :put do %>
+      <%= hidden_field_tag :friend_id, friendship.friend_id %>
+      <%= submit_tag "Accept Friend request"%>
+    <% end %>
+</li>

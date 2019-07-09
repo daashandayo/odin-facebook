@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # root to: "home#index"
   post '/friendships', to: "friendships#create", as: "friendships_create"
+  get '/notifications', to: "friendships#index", as: "notifications"
+  put '/friendships', to: "friendships#update", as: "friendships_update"
 end
