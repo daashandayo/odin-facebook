@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   post '/friendships', to: "friendships#create", as: "friendships_create"
   get '/notifications', to: "friendships#index", as: "notifications"
   put '/friendships', to: "friendships#update", as: "friendships_update"
+
+  post '/posts', to:     "posts#create", as: "post_create"
+
 end

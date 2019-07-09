@@ -8,6 +8,17 @@
 </div>
 
 <h2>Posts</h2>
+<% if @user == current_user %>
+  <div class="form-container">
+    <%= form_for(@post, url: post_create_path) do |f| %>
+    
+      <%= f.label :content %>
+      <%= f.text_field :content, class: 'form-control' %>
+
+      <%= f.submit "Create Post", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+<% end %>
 <div class="posts">
   <%= render @posts %>
 </div>
