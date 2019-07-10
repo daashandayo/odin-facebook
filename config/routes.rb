@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   post '/likes', to:     "likes#create", as: "like_create"
   post '/comments', to: "comments#create", as: "comment_create"
 
-  get  '/timeline', to:  "posts#index"
+  root to: 'posts#index'
+
 end
