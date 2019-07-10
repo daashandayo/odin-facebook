@@ -4,7 +4,8 @@
 
 <h2>Profile</h2>
 <div class="profile">
-  <%= @user.name %>
+  <div>Name : <%= @user.name %> </div>
+  <div>Profile Picture : <%= gravatar_for @user %></div>
 </div>
 
 <h2>Posts</h2>
