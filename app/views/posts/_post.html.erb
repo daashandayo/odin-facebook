@@ -1,4 +1,5 @@
 <%= post.content %>
+<div>Author: <%= User.find(post.user_id).name %></div>
 <div>Likes : <%= post.likes.count %></div>
 <% if current_user.likes.exists?(post_id: post.id) %>
   <br> <button disabled="true ">Post Liked</button> <br>

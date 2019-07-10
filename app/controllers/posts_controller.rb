@@ -10,6 +10,11 @@ class PostsController < ApplicationController
         end
     end
 
+    def index
+      friendsids = current_user.friendships.pluck(:friend_id) << current_user.id
+      @postall = Post.where(user_id:friendsids) 
+    end
+
     private
 
     def post_params
