@@ -1,22 +1,18 @@
+# frozen_string_literal: true
+
 class LikesController < ApplicationController
-
-    def create
-        post = Post.find(like_params)
-        @like = post.likes.build(user_id: current_user.id)
-        if @like.save
-            # redirect_to users_show_path(@user, id: post.user.id)
-            redirect_to(request.env['HTTP_REFERER'])        
-        else
-            redirect_to(request.env['HTTP_REFERER'])        
-        end
+  def create
+    post = Post.find(like_params[:post_id])
+    @like = post.likes.build(user_id: current_user.id)
+    if @like.save
+      redirect_to(request.env['HTTP_REFERER']) and return
     end
+    redirect_to(request.env['HTTP_REFERER'])
+  end
 
 
-    private 
-     def like_params
-        params[:post_id]
-     end
+  private
+  def like_params
+    params.permit(:post_id)
+  end
 end
-
-
-
