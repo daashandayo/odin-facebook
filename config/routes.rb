@@ -16,4 +16,5 @@ Rails.application.routes.draw do
 
   root to: 'posts#index'
 
+  get '/privacy-policy', to: "static#privacy"
 end
