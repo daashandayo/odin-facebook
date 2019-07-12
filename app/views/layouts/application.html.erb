@@ -11,9 +11,12 @@
 
   <body>
 
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
+    <header class="navbar navbar-fixed-top navbar-color">
+      <div class="container">
+
+        <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+        <% end %>
 
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
@@ -22,6 +25,7 @@
     <p class="navbar-text pull-right">
       <% if user_signed_in? %>
         Logged in as <strong><%= current_user.email %></strong>.
+        <%= link_to 'Profile', users_show_path(current_user, id: current_user.id) %>
         <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
         <%= link_to "All Users", users_path %>
         <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> |
@@ -35,5 +39,6 @@
     <%= yield %>
     
 
+    </div>    
   </body>
 </html>
