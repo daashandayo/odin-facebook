@@ -12,8 +12,6 @@ gem 'pg', '>= 0.18', '< 2.0'
 
 gem 'sprockets-rails'
 
-# Bootstrap
-gem 'bootstrap-sass'
 # Use devise for authentication
 gem 'devise'
 # Use Omniauth

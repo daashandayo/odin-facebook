@@ -1,28 +1,25 @@
 <% provide(:title, "Profile page") %>
-
-<h1>Profile page</h1>
-
-<h2>Profile</h2>
-<div class="profile">
-  <div>Name : <%= @user.name %> </div>
-  <div>Profile Picture : <%= gravatar_for @user %></div>
-</div>
-
-<h2>Posts</h2>
-<% if @user == current_user %>
-  <div class="form-container">
-    <%= form_for(@post, url: post_create_path) do |f| %>
-    
-      <%= f.label :content %>
-      <%= f.text_area :content, class: 'form-control' %>
-
-      <%= f.submit "Create Post", class: "btn btn-primary" %>
+<br>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h4>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h4>
+    </section>
+    <% if @user == current_user %>
+      <%= form_for(@post, url: post_create_path) do |f| %>
+        <div class="field">
+          <%= f.text_area :content, placeholder: "Compose new post..." %>
+        </div>
+        <%= f.submit "Create Post", class: "btn btn-primary btn-bloc" %>
+      <% end %>
     <% end %>
+  </aside>
+  <div class="col-md-8">
+    <h3>Posts</h3>
+    <%= render @posts %>
   </div>
-  <hr>
-  <hr>
-<% end %>
-<div class="posts">
-  <%= render @posts %>
 </div>
 

@@ -73,6 +73,10 @@ nav ul .logged_in_as{
     font-weight: normal;
     color: #777;
   }
+
+  h3 {
+    text-align: center;
+  }
   
   p {
     font-size: 1.1em;
@@ -162,5 +166,16 @@ nav ul .logged_in_as{
   display: block;
   margin-top: 1.5rem;
   list-style: none;
+}
 
+.btn-bloc {
+  width: 300px;
+}
+
+aside {
+  textarea {
+    height: 125px;
+    width: 300px;
+    margin-bottom: 5px;
+  }
 }
