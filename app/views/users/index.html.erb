@@ -1,7 +1,10 @@
-<% provide(:title, "Profile page") %>
+<% provide(:title, "Users List") %>
 
 <h1>All Users</h1>
-
-<ul class="users">
-  <%= render @users %>
-</ul>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <ul class="users">
+      <%= render @users %>
+    </ul>
+  </div>
+</div>
