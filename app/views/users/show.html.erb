@@ -19,7 +19,11 @@
   </aside>
   <div class="col-md-8">
     <h3>Posts</h3>
-    <%= render @posts %>
+    <% if @posts.empty? %>
+      <h3 class="center-txt"><em>There are no posts</em></h3>
+    <% else %>
+      <%= render @posts %>
+    <% end %>
   </div>
 </div>
 

@@ -1,11 +1,17 @@
 <% if user != current_user && !current_user.friendships.include?(user) %>
-  <li>
-    <%= link_to user.name, users_show_path(user, id: user.id) %>
+  <% @users.each do |user| %>
+ 
+    <h4>
+      <%= gravatar_for user, class: "userlist_gravatar" %>
+      <%= link_to user.name, users_show_path(user, id: user.id) %>
+    </h4>
     <!-- <%= user.name %> -->
     <%# <span>-- "Add Friend" button here </span> %>
     <%= form_tag friendships_create_path do %>
       <%= hidden_field_tag :friend_id, user.id %>
-      <%= submit_tag "Add friend"%>
+      <%= submit_tag "Add friend", class: "btn btn-primary btn-sm btn-block"%>
     <% end %>
-  </li>
-<%end%>
+    <hr>
+
+  <% end %>
+<% end %>

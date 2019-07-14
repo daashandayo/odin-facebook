@@ -1,36 +1,35 @@
-<div class="post-container">
-  <!--- AUTHOR --->
-  <div class="author">
-    <strong><%= User.find(post.user_id).name %></strong>
-  </div>
-  <!--- POST CONTENT --->
-  <div class="post-content">
-    <%= post.content %>
-  </div>
-  <!--- POST LIKES --->
-  <% if current_user.likes.exists?(post_id: post.id) %>
-    <div><button disabled="true" class="post-like">Liked : <%= post.likes.count %></button></div>
-  <% else %>
-    <div>
-      <%= form_tag like_create_path do %>
-        <%= hidden_field_tag :post_id, post.id %>
-        <%= submit_tag ("Like : " + (post.likes.count).to_s), class: "post-like"%>
-      <% end %>
+  <div class="post-container">
+    <!--- AUTHOR --->
+    <div class="author">
+      <strong><%= User.find(post.user_id).name %></strong>
     </div>
-  <% end %>
-  <!--- POST COMMENTS --->
-  <div class="post-comments-container">
-    <div class="comment-heading">Comments:</div>
-    <%# Add comments %>
-    <%= form_tag comment_create_path, class: "comment-form" do %>
-      <%= hidden_field_tag :post_id, post.id %>
-      <%= text_area_tag :content,"",placeholder: "Content", class: "comment-textarea" %>
-      <%= submit_tag "Add Comment", class: "comment-submit" %>
+    <!--- POST CONTENT --->
+    <div class="post-content">
+      <%= post.content %>
+    </div>
+    <!--- POST LIKES --->
+    <% if current_user.likes.exists?(post_id: post.id) %>
+      <div><button disabled="true" class="post-like">Liked : <%= post.likes.count %></button></div>
+    <% else %>
+      <div>
+        <%= form_tag like_create_path do %>
+          <%= hidden_field_tag :post_id, post.id %>
+          <%= submit_tag ("Like : " + (post.likes.count).to_s), class: "post-like"%>
+        <% end %>
+      </div>
     <% end %>
-    <%# List all comments on this post %>
-    <ul class="post-comments">
-      <%= render post.comments %>
-    </ul>
+    <!--- POST COMMENTS --->
+    <div class="post-comments-container">
+      <div class="comment-heading">Comments:</div>
+      <%# Add comments %>
+      <%= form_tag comment_create_path, class: "comment-form" do %>
+        <%= hidden_field_tag :post_id, post.id %>
+        <%= text_area_tag :content,"",placeholder: "Content", class: "comment-textarea" %>
+        <%= submit_tag "Add Comment", class: "comment-submit" %>
+      <% end %>
+      <%# List all comments on this post %>
+      <ul class="post-comments">
+        <%= render post.comments %>
+      </ul>
+    </div>
   </div>
-</div>
-  
