@@ -12,8 +12,8 @@ gem 'pg', '>= 0.18', '< 2.0'
 
 gem 'sprockets-rails'
 
-gem 'faker'
-
+# gem 'faker'
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 # Use devise for authentication
 gem 'devise'
 # Use Omniauth
