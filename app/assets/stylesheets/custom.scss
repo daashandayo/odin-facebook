@@ -120,6 +120,10 @@ nav ul .logged_in_as{
   font-size: 1.6rem;
 }
 
+.post-delete {
+  margin-bottom: 1rem;
+}
+
 .post-like {
   all: unset;
   border: 1.5px solid #ff6488;
@@ -127,8 +131,12 @@ nav ul .logged_in_as{
   padding: 0.3em 0.6em;
   text-transform: uppercase;
 }
-.post-like[disabled] {
+.post-liked {
   background: #ff6488;
+  color: #fff;
+}
+
+.post-liked:hover {
   color: #fff;
 }
 

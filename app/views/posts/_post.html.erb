@@ -6,15 +6,19 @@
     <!--- POST CONTENT --->
     <div class="post-content">
       <%= post.content %>
+    </div>
+    <!--- POST DELETE --->
+    <div class="post-delete">
       <% if User.find(post.user_id) == current_user %>
-          <%= button_to "delete", users_show_path(post, @post.id), :method => :delete, :class=>'btn btn-danger' %>
-      <% else %>
-        redirect_to users_show_path(@user, id: current_user.id)
+        <%= link_to "Delete post", post_delete_path(post, post.id), :method => :delete, :class=>'btn btn-danger' %>
       <% end %>
     </div>
     <!--- POST LIKES --->
     <% if current_user.likes.exists?(post_id: post.id) %>
-      <div><button disabled="true" class="post-like">Liked : <%= post.likes.count %></button></div>
+      <div>
+        <% like = post.likes.find_by(user_id: current_user.id) %>
+        <%= link_to "Unlike : " + (post.likes.count).to_s , like_delete_path(like, like.id), :method => :delete, :class=>'btn post-liked' %>
+      </div>
     <% else %>
       <div>
         <%= form_tag like_create_path do %>
