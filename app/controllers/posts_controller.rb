@@ -16,6 +16,13 @@ class PostsController < ApplicationController
       @postall = Post.where(user_id:friendsids) 
     end
 
+    def destroy
+      @post = Post.find_by(id: params[:id])
+      @post.destroy
+      flash[:success] = 'Post deleted'
+      redirect_to users_show_path(@user, id: current_user.id)
+    end
+
     private
 
     def post_params

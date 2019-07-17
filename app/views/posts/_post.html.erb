@@ -6,6 +6,11 @@
     <!--- POST CONTENT --->
     <div class="post-content">
       <%= post.content %>
+      <% if User.find(post.user_id) == current_user %>
+          <%= button_to "delete", users_show_path(post, @post.id), :method => :delete, :class=>'btn btn-danger' %>
+      <% else %>
+        redirect_to users_show_path(@user, id: current_user.id)
+      <% end %>
     </div>
     <!--- POST LIKES --->
     <% if current_user.likes.exists?(post_id: post.id) %>
