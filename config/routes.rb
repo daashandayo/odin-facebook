@@ -14,6 +14,12 @@ Rails.application.routes.draw do
   post '/likes', to:     "likes#create", as: "like_create"
   post '/comments', to: "comments#create", as: "comment_create"
 
+  delete '/posts/:id', to: "posts#destroy" , as: "post_delete"
+  delete '/likes/:id', to: "likes#destroy" , as: "like_delete"
+  delete '/comments/:id', to: "comments#destroy" , as: "comment_delete"
+
+
   root to: 'posts#index'
 
+  get '/privacy-policy', to: "static#privacy"
 end

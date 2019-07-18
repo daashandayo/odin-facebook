@@ -1,27 +1,44 @@
-<%= post.content %>
-<div>Author: <%= User.find(post.user_id).name %></div>
-<div>Likes : <%= post.likes.count %></div>
-<% if current_user.likes.exists?(post_id: post.id) %>
-  <br> <button disabled="true ">Post Liked</button> <br>
-<% else %>
-  <div>
-    <%= form_tag like_create_path do %>
-      <%= hidden_field_tag :post_id, post.id %>
-      <%= submit_tag "Like"%>
+  <div class="post-container">
+    <!--- AUTHOR --->
+    <div class="author">
+      <strong><%= User.find(post.user_id).name %></strong>
+    </div>
+    <!--- POST CONTENT --->
+    <div class="post-content">
+      <%= post.content %>
+    </div>
+    <!--- POST DELETE --->
+    <div class="post-delete">
+      <% if User.find(post.user_id) == current_user %>
+        <%= link_to "Delete post", post_delete_path(post, post.id), :method => :delete, :class=>'btn btn-danger' %>
+      <% end %>
+    </div>
+    <!--- POST LIKES --->
+    <% if current_user.likes.exists?(post_id: post.id) %>
+      <div>
+        <% like = post.likes.find_by(user_id: current_user.id) %>
+        <%= link_to "Unlike : " + (post.likes.count).to_s , like_delete_path(like, like.id), :method => :delete, :class=>'btn post-liked' %>
+      </div>
+    <% else %>
+      <div>
+        <%= form_tag like_create_path do %>
+          <%= hidden_field_tag :post_id, post.id %>
+          <%= submit_tag ("Like : " + (post.likes.count).to_s), class: "post-like"%>
+        <% end %>
+      </div>
     <% end %>
+    <!--- POST COMMENTS --->
+    <div class="post-comments-container">
+      <div class="comment-heading">Comments:</div>
+      <%# Add comments %>
+      <%= form_tag comment_create_path, class: "comment-form" do %>
+        <%= hidden_field_tag :post_id, post.id %>
+        <%= text_area_tag :content,"",placeholder: "Content", class: "comment-textarea" %>
+        <%= submit_tag "Add Comment", class: "comment-submit" %>
+      <% end %>
+      <%# List all comments on this post %>
+      <ul class="post-comments">
+        <%= render post.comments %>
+      </ul>
+    </div>
   </div>
-<% end %>
-<h4>Comments :</h4>
-  <%# Add comments %>
-  <%= form_tag comment_create_path do %>
-    <%= hidden_field_tag :post_id, post.id %>
-    <%= label_tag :content %>
-    <%= text_area_tag :content %>
-    <%= submit_tag "Add Comment"%>
-  <% end %>
-  <%# List all comments on this post %>
-  <% @comments = post.comments %>
-  <ul>
-    <%= render @comments %>
-  </ul>
-<hr>

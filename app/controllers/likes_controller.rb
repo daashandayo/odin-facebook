@@ -10,6 +10,12 @@ class LikesController < ApplicationController
     redirect_to(request.env['HTTP_REFERER'])
   end
 
+  def destroy
+    @like = Like.find_by(id: params[:id])
+    @like.destroy
+    flash[:success] = 'Like deleted'
+    redirect_to(request.env['HTTP_REFERER'])  
+  end
 
   private
   def like_params

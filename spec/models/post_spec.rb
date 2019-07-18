@@ -9,3 +9,23 @@ RSpec.describe Post, type: :model do
     it { should have_many(:comments). dependent(:destroy) }
   end
 end
+
+describe Post do
+  it "has valid Factory" do
+    expect(FactoryBot.build(:post)).to be_valid
+  end
+
+  it "is invalid without content" do
+    expect(FactoryBot.build(:post, content: nil)).not_to be_valid
+  end
+
+  it "is invalid without author" do
+    expect(FactoryBot.build(:post, user_id: nil)).not_to be_valid
+  end
+
+  it "allows multiple posts from same author" do
+    author = FactoryBot.create(:user)
+    FactoryBot.create(:post, user_id: author.id)
+    expect(FactoryBot.build(:post, user_id: author.id)).to be_valid
+  end
+end

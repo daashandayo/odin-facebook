@@ -1,0 +1,203 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+/* header */
+
+#logo {
+    float: left;
+    margin-right: 10px;
+    font-size: 1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    padding-top: 9px;
+    font-weight: bold;
+  }
+  
+  #logo:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+nav ul .logged_in_as{
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.navbar-link {
+  color: #fff;
+}
+
+/* universal */
+  
+.navbar-color{
+    background: #3b5998;
+    color: white
+}
+
+  section {
+    overflow: auto;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  .center h1 {
+    margin-bottom: 10px;
+  }
+
+/* typography */
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+  }
+  
+  h1 {
+    font-size: 3em;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    margin-top: 1em;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 1.2em;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: normal;
+    color: #777;
+  }
+
+  h3 {
+    text-align: center;
+  }
+  
+  p {
+    font-size: 1.1em;
+    line-height: 1.7em;
+  }
+
+
+/* form*/
+
+  .checkbox {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    span {
+      font-weight: normal;
+    }
+  }
+  
+  .cancel_account{
+    text-align: center;
+  }
+
+/* POSTS */
+
+.author {
+  font-size: 1.7rem;
+}
+
+.post-container {
+  border: 1px solid #e7e7e7;
+  width: 60%;
+  margin: 1.5rem auto;
+  padding: 1.5rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px 1px rgba(240,240,240,0.7);
+  font-size: 1.5rem;
+}
+
+.post-content {
+  padding: 1rem 0;
+  font-size: 1.6rem;
+}
+
+.post-delete {
+  margin-bottom: 1rem;
+}
+
+.post-like {
+  all: unset;
+  border: 1.5px solid #ff6488;
+  border-radius: 5px;
+  padding: 0.3em 0.6em;
+  text-transform: uppercase;
+}
+.post-liked {
+  background: #ff6488;
+  color: #fff;
+}
+
+.post-liked:hover {
+  color: #fff;
+}
+
+.post-comments-container {
+  margin-top: 1.5rem;
+}
+
+.comment-form {
+  display: flex;
+  height: 4.4rem;
+}
+
+.comment-textarea {
+  all: unset;
+  flex: 4;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #c7c7c7;
+  border-radius: 5px;
+  margin-right: 0.2rem;
+}
+
+.comment-submit {
+  all: unset;
+  flex: 1;
+  border: 1.5px solid #21d5b4;
+  border-radius: 5px;
+  padding: 0.1em 0.6em;
+  margin-left: 0.2rem;
+  text-align: center;
+}
+
+.comment-submit:active {
+  color: #fff;
+  background: #21d5b4;
+}
+
+.post-comments {
+  all: unset;
+  display: block;
+  margin-top: 1.5rem;
+  list-style: none;
+}
+
+.btn-bloc {
+  width: 300px;
+}
+
+aside {
+  textarea {
+    height: 125px;
+    width: 300px;
+    margin-bottom: 5px;
+  }
+}
+
+/* User list page*/
+
+.users {
+  margin-left: 155px;
+}
+
+.gravatar {
+  border-radius: 50%;
+}
