@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     comment = { user_id: current_user.id }.merge(comment_params)
     @comment = post.comments.build(comment)
     if @comment.save
-      redirect_to(request.env['HTTP_REFERER']) and return
+      redirect_to(request.env['HTTP_REFERER']) && return
     end
     redirect_to(request.env['HTTP_REFERER'])
   end

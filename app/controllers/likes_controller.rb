@@ -14,7 +14,7 @@ class LikesController < ApplicationController
     @like = Like.find_by(id: params[:id])
     @like.destroy
     flash[:success] = 'Like deleted'
-    redirect_to(request.env['HTTP_REFERER'])    
+    redirect_to(request.env['HTTP_REFERER'])  
   end
 
   private
