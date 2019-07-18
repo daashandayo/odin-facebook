@@ -11,6 +11,13 @@ class CommentsController < ApplicationController
     redirect_to(request.env['HTTP_REFERER'])
   end
 
+  def destroy
+    @comment = Comment.find_by(id: params[:id])
+    @comment.destroy
+    flash[:success] = 'Comment deleted'
+    redirect_to(request.env['HTTP_REFERER']) and return
+  end
+
   private
   def comment_params
     params.permit(:content)

@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 
+  validates :name, presence: true
+
   has_and_belongs_to_many :friendships,
                           class_name: 'User',
                           join_table: :friendships,

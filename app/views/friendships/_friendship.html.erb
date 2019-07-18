@@ -1,7 +1,10 @@
-<li>
-  <%= User.find(friendship.friend_id).name %>
+<div>
+  <h4>
+    <%= gravatar_for User.find(friendship.friend_id), class: "userlist_gravatar" %>
+    <%= link_to User.find(friendship.friend_id).name, users_show_path(User.find(friendship.friend_id), id: User.find(friendship.friend_id).id) %>
+  </h4>
   <%= form_tag friendships_update_path, method: :put do %>
       <%= hidden_field_tag :friend_id, friendship.friend_id %>
-      <%= submit_tag "Accept Friend request"%>
+      <%= submit_tag "Accept Friend request", class: "btn btn-primary btn-sm btn-block"%>
     <% end %>
-</li>
+</div>

@@ -1,3 +1,6 @@
 <li>
   <strong><%= User.find(comment.user_id).name %> : </strong><%= comment.content %>
+  <% if User.find(comment.user_id) == current_user %>
+        <%= link_to "Delete comment", comment_delete_path(comment, comment.id), :method => :delete, :class=>'btn btn-danger' %>
+  <% end %>
 </li>

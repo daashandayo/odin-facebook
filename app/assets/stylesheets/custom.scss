@@ -31,7 +31,7 @@ nav ul .logged_in_as{
 /* universal */
   
 .navbar-color{
-    background: rgb(2, 2, 77);
+    background: #3b5998;
     color: white
 }
 
@@ -73,6 +73,10 @@ nav ul .logged_in_as{
     font-weight: normal;
     color: #777;
   }
+
+  h3 {
+    text-align: center;
+  }
   
   p {
     font-size: 1.1em;
@@ -91,6 +95,10 @@ nav ul .logged_in_as{
     }
   }
   
+  .cancel_account{
+    text-align: center;
+  }
+
 /* POSTS */
 
 .author {
@@ -112,6 +120,10 @@ nav ul .logged_in_as{
   font-size: 1.6rem;
 }
 
+.post-delete {
+  margin-bottom: 1rem;
+}
+
 .post-like {
   all: unset;
   border: 1.5px solid #ff6488;
@@ -119,8 +131,12 @@ nav ul .logged_in_as{
   padding: 0.3em 0.6em;
   text-transform: uppercase;
 }
-.post-like[disabled] {
+.post-liked {
   background: #ff6488;
+  color: #fff;
+}
+
+.post-liked:hover {
   color: #fff;
 }
 
@@ -147,7 +163,7 @@ nav ul .logged_in_as{
   flex: 1;
   border: 1.5px solid #21d5b4;
   border-radius: 5px;
-  padding: 0.3em 0.6em;
+  padding: 0.1em 0.6em;
   margin-left: 0.2rem;
   text-align: center;
 }
@@ -162,5 +178,26 @@ nav ul .logged_in_as{
   display: block;
   margin-top: 1.5rem;
   list-style: none;
+}
 
+.btn-bloc {
+  width: 300px;
+}
+
+aside {
+  textarea {
+    height: 125px;
+    width: 300px;
+    margin-bottom: 5px;
+  }
+}
+
+/* User list page*/
+
+.users {
+  margin-left: 155px;
+}
+
+.gravatar {
+  border-radius: 50%;
 }

@@ -1,6 +1,11 @@
-<h1>Notifications</h1>
-<%= Friendship.where("user_id = ? AND status = 'Pending' ",current_user.id).count %>
-
-<ul>
-  <%= render @notifications %>
-</ul>
+<h1>
+  Notifications :
+  <%= Friendship.where("user_id = ? AND status = 'Pending' ",current_user.id).count %>
+</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="users">
+      <%= render @notifications %>
+    </div>
+  </div>
+</div>
