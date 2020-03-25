@@ -1,46 +1,79 @@
-# Fakebook
+# Odin Facebook
 
-Fakebook is Facebook-like social network application.
+> A Facebook-like, built to learn Ruby on Rails.
 
-### [Live version](https://mighty-basin-54335.herokuapp.com)
+[//]: # (Screenshot, Application concept art etc)
+![Screenshot](./screenshots.png)
 
-## Contributors
+[//]: # (Live Demo link)
+<p align="center">
+  <a href="https://juz-odin-facebook.herokuapp.com/">Live Demo</a>
+</p>
 
-[Darshan](https://github.com/daashandayo)<br>
-[Oluwaseun Bello](https://github.com/bellom)
+## Built With
 
-## Technologies
+* HTML
+* CSS
+* JavaScript
+* Ruby on Rails
 
-Ruby 2.6.0
-Postgresql 1.1.4
+## Get Started
 
-## Framework
+### Setup
 
-Ruby on Rails 5.2.3
-Bootstrap
+1. Clone this repository.
 
-## Getting started
-
-To get started with the app, clone the repo
-
-```
-$ git clone git@github.com:daashandayo/odin-facebook.git
-```
-
-and then install the needed gems:
-```
-$ bundle install --without production
+```bash
+git clone git@github.com:juzQrios/odin-facebook.git
 ```
 
-Next, migrate the database:
+2. Installation dependencies.
 
-```
-$ rails db:migrate
-```
-
-Finally, run the server and have fun:
-
-```
-$ rails server
+```bash
+bundle install --without production
 ```
 
+3. Migrate Database.
+
+```bash
+rails db:migrate
+```
+
+4. Start local server.
+
+```bash
+rails server
+```
+
+### Tests
+
+While it is a good practice to test code, this project doesn't have any tests right now but I might add them in future.
+
+### Deployment
+
+## Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to checkout this project's [Kanban board](https://github.com/juzQrios/odin-facebook/projects/1) or [issues page](https://github.com/juzQrios/odin-facebook/issues).
+
+## Acknowledgments
+
+* [Microverse](https://www.microverse.org/)
+
+## License
+
+This project is [MIT](./LICENSE) licensed.
+
+## Authors
+
+#### Darshan
+
+* GitHub: [@juzQrios](https://github.com/juzQrios)
+* Linkedin: [Darshan J](https://www.linkedin.com/in/jayadevdarshan/)
+* Email: <jayadev.darshan@gmail.com>
+
+#### Oluwaseun Bello
+
+* GitHub: [@bellom](https://github.com/bellom)
+* Email: <bellomsean@gmail.com>
